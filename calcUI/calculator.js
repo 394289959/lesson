@@ -1,16 +1,24 @@
 var calculator = {
 	memory : 0 ,
 	number : 0 ,
+	
+	
+	
 	numberPressed : function(num) {
 		console.log("number pressed: "+num) ;
 		this.number = this.number * 10 + num ;
 		calculatorUI.setDisplay(this.number) ;
 	},
 	operatorPressed : function(operator) {
-		console.log("operator pressed: "+operator) ;	
+		alert("operator pressed: "+operator) ;	
+	},
+	multiplyPressed : function() {
+		
+		alert("multiply pressed: ") ;	
 	},
 	equalPressed : function() {
-		console.log("equal pressed") ;
+		 $("#display").text("3") ; 
+		alert("equal pressed") ;
 	},
 	dotPressed : function() {
 		console.log("dot pressed") ;
@@ -48,6 +56,9 @@ var calculatorUI = {
 		});
 		$("#AC").click(function() {
 			calculator.allClearPressed() ;
+		});
+		$("#multiply").click(function() {
+			calculator.multiplyPressed() ;
 		});
 	},
 	setDisplay : function() {
